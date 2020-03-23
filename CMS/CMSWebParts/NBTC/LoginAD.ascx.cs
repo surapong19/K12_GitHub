@@ -99,7 +99,7 @@ public partial class CMSWebParts_NBTC_LoginAD : CMSAbstractWebPart
     {
         try
         {
-            if (user == "surapong.test" && pass == "1234")
+            if (user == "surapong.test@gmail.com" && pass == "1234")
             {
                 return true;
             }
@@ -129,6 +129,8 @@ public partial class CMSWebParts_NBTC_LoginAD : CMSAbstractWebPart
             newUser.Email = user;
             newUser.PreferredCultureCode = "en-us";
 
+            newUser.Enabled = true;
+            newUser.IsExternal = true;
 
             newUser.SiteIndependentPrivilegeLevel = UserPrivilegeLevelEnum.Editor;
 

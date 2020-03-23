@@ -1,7 +1,8 @@
-<%@ Control Language="C#" AutoEventWireup="true" Inherits="CMSWebParts_NBTC_LoginAD" CodeFile="~/CMSWebParts/NBTC/LoginAD.ascx.cs" %>
+<%@ Control Language="C#" AutoEventWireup="true" Inherits="CMSWebParts_NBTC_LoginAD" 
+    CodeFile="LoginAD.ascx.cs" %>
 
 
-<asp:TextBox ID="txtUser" runat="server"></asp:TextBox>
+<asp:TextBox ID="txtUser" runat="server" Text="surapong.test@gmail.com"></asp:TextBox>
 
 <asp:TextBox ID="txtPass" runat="server" TextMode="Password"></asp:TextBox>
 
