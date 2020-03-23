@@ -12,6 +12,7 @@ using CMS.Base;
 using CMS.SiteProvider;
 using CMS.EventLog;
 using CMS.Localization;
+using Custom.SDB;
 
 public partial class CMSWebParts_NBTC_LoginAD : CMSAbstractWebPart
 {
@@ -88,10 +89,8 @@ public partial class CMSWebParts_NBTC_LoginAD : CMSAbstractWebPart
             }
             catch (Exception ex)
             {
-                EventLogProvider.LogEvent(EventType.ERROR, "NBTC", "btnLogin_Click", eventDescription: $"ex.Message=>{ex.Message}");
-
+                UtilityHelper.LogEvent($"ex.Message=>{ex.Message}");
             }
-
         }
     }
 
@@ -110,10 +109,8 @@ public partial class CMSWebParts_NBTC_LoginAD : CMSAbstractWebPart
         }
         catch (Exception ex)
         {
-            EventLogProvider.LogEvent(EventType.ERROR, "NBTC", "CallAD", eventDescription: $"ex.Message=>{ex.Message}");
-
+            UtilityHelper.LogEvent($"ex.Message=>{ex.Message}");
             return false;
-
         }
     }
 
@@ -141,10 +138,8 @@ public partial class CMSWebParts_NBTC_LoginAD : CMSAbstractWebPart
         }
         catch (Exception ex)
         {
-            EventLogProvider.LogEvent(EventType.ERROR, "NBTC", "CreateUser", eventDescription: $"ex.Message=>{ex.Message}");
+            UtilityHelper.LogEvent($"ex.Message=>{ex.Message}");
             return false;
         }
     }
-
-
 }
