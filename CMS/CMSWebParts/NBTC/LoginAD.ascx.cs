@@ -63,9 +63,24 @@ public partial class CMSWebParts_NBTC_LoginAD : CMSAbstractWebPart
 
     #endregion
 
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //get culture-code หน้าที่เรายืนอยู่ แบบ auto
+        //pass ค่าเข้า function set ภาษาตาม culture
+        SetResource(LocalizationContext.CurrentCulture.CultureCode); 
+    }
+
+    private void SetResource(string cultureCode) 
+    {
+        //เรียก api เพื่อดึงเอา text ตาม key เเละ culture
+        lblUser.Text = ResHelper.GetString("user", cultureCode);
+    }
+
     protected void btnLogin_Click(object sender, EventArgs e)
     {
-        
+
+
+        #region
         string user = txtUser.Text.Trim();
         string pass = txtPass.Text.Trim();
         if (CallAD(user, pass))
@@ -92,6 +107,8 @@ public partial class CMSWebParts_NBTC_LoginAD : CMSAbstractWebPart
                 UtilityHelper.LogEvent($"ex.Message=>{ex.Message}");
             }
         }
+        #endregion
+
     }
 
     private bool CallAD(string user, string pass)

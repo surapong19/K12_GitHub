@@ -2,6 +2,10 @@
     CodeFile="LoginAD.ascx.cs" %>
 
 
+
+
+
+<asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
 <asp:TextBox ID="txtUser" runat="server" Text="surapong.test@gmail.com"></asp:TextBox>
 
 <asp:TextBox ID="txtPass" runat="server" TextMode="Password"></asp:TextBox>
